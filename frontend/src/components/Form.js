@@ -115,7 +115,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
         <Input name="program" />
       </InputArea>
 
-      <Button type="submit">Submit</Button>
+      <Button type="submit">Add Student</Button>
     </FormContainer>
   );
 };
