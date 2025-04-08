@@ -66,18 +66,22 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
 
     if (onEdit) {
       await axios
-        .put("http://localhost:8800/" + onEdit.id, {
-          name: user.name.value,
-          email: user.email.value,
-          phone: user.phone.value,
-          program: user.program.value,
-        })
+        .put(
+          "https://vqvfhiwwpr.us-east-2.awsapprunner.com/api/users/" +
+            onEdit.id,
+          {
+            name: user.name.value,
+            email: user.email.value,
+            phone: user.phone.value,
+            program: user.program.value,
+          }
+        )
         .then(({ data }) => toast.success(data))
         .catch(({ data }) => toast.error(data));
     } else {
       await axios
         // .post("http://localhost:8800"
-        .post("https://vqvfhiwwpr.us-east-2.awsapprunner.com/", {
+        .post("https://vqvfhiwwpr.us-east-2.awsapprunner.com/api/users", {
           name: user.name.value,
           email: user.email.value,
           phone: user.phone.value,
