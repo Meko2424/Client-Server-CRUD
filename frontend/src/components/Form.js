@@ -67,7 +67,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
     if (onEdit) {
       await axios
         .put(
-          "https://vqvfhiwwpr.us-east-2.awsapprunner.com" + onEdit.id,
+          "https://vqvfhiwwpr.us-east-2.awsapprunner.com/" + onEdit.id,
           // onEdit.id,
           {
             name: user.name.value,
@@ -81,7 +81,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
     } else {
       await axios
         // .post("http://localhost:8800"
-        .post("https://vqvfhiwwpr.us-east-2.awsapprunner.com", {
+        .post("https://vqvfhiwwpr.us-east-2.awsapprunner.com/", {
           name: user.name.value,
           email: user.email.value,
           phone: user.phone.value,
