@@ -27,8 +27,9 @@ function App() {
     try {
       // const res = await axios.get("http://localhost:8800");
       const res = await axios.get(
-        "https://vqvfhiwwpr.us-east-2.awsapprunner.com"
+        "https://vqvfhiwwpr.us-east-2.awsapprunner.com:8800"
       );
+
       setUsers(res.data.sort((a, b) => (a.name > b.name ? 1 : -1)));
     } catch (error) {
       toast.error(error);

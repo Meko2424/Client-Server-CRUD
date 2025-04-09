@@ -1,15 +1,17 @@
 import mysql from "mysql";
 
 export const db = mysql.createConnection({
-  // host: "localhost",
   host: "webservice.cz2a2og0qa52.us-east-2.rds.amazonaws.com",
   user: "admin",
   password: "minimumOf12*",
+  //port: 3306,
+  database: "students",
 
-  port: 3306,
+  ///////////////////////////
+  // host: "localhost",
   // user: "root",
   // password: "password",
-  database: "students",
+  // database: "students",
 });
 
 db.connect((err) => {
