@@ -7,4 +7,4 @@ app.use(express.json());
 app.use(cors());
 app.use("/", userRoutes);
 // app.use("/api/users", userRoutes);
-app.listen(8800);
+app.listen(3306);
