@@ -5,8 +5,8 @@ export const db = mysql.createConnection({
   host: "webservice.cz2a2og0qa52.us-east-2.rds.amazonaws.com",
   user: "admin",
   password: "minimumOf12*",
-  port: "3306",
-  // port: "8800",
+
+  port: 3306,
   // user: "root",
   // password: "password",
   database: "students",
