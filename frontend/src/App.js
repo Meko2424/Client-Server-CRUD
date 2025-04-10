@@ -25,10 +25,9 @@ function App() {
 
   const getUsers = async () => {
     try {
-      // const res = await axios.get("http://localhost:8800");
-      const res = await axios.get(
-        "https://vqvfhiwwpr.us-east-2.awsapprunner.com/"
-      );
+      const res = await axios.get("http://localhost:8800");
+      // const res = await axios.get(
+      //   "https://vqvfhiwwpr.us-east-2.awsapprunner.com/" );
 
       setUsers(res.data.sort((a, b) => (a.name > b.name ? 1 : -1)));
     } catch (error) {
