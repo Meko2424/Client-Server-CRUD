@@ -55,7 +55,7 @@ export const deleteUser = (req, res) => {
 };
  */
 
-import { ddb } from "../db.js";
+//import { ddb } from "../db.js";
 import {
   PutCommand,
   GetCommand,
@@ -63,6 +63,9 @@ import {
   UpdateCommand,
   DeleteCommand,
 } from "@aws-sdk/lib-dynamodb";
+
+const client = new DynamoDBClient({ region: "us-east-2" });
+const ddb = DynamoDBDocumentClient.from(client);
 import crypto from "crypto";
 
 const TABLE_NAME = "Students";
