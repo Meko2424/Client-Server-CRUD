@@ -56,6 +56,8 @@ export const deleteUser = (req, res) => {
  */
 
 //import { ddb } from "../db.js";
+import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
+import { DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb";
 import {
   PutCommand,
   //GetCommand,
