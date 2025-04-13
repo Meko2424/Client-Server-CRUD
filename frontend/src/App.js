@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import { API_URL } from "./utils.js";
 
 const Container = styled.div`
   width: 100%;
@@ -26,9 +27,7 @@ function App() {
   const getUsers = async () => {
     try {
       // const res = await axios.get("http://localhost:8800");
-      const res = await axios.get(
-        "https://wrcwrfui3h.us-east-2.awsapprunner.com"
-      );
+      const res = await axios.get(API_URL);
 
       setUsers(res.data.sort((a, b) => (a.name > b.name ? 1 : -1)));
     } catch (error) {

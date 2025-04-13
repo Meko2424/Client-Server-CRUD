@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon index.js",
+    "dev": "DEVELOPMENT=TRUE nodemon index.js",
     "start": "node index.js"
   },
   "keywords": [],
@@ -12,9 +12,12 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.788.0",
+    "@aws-sdk/lib-dynamodb": "^3.788.0",
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "mysql": "^2.18.1",
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.9",
+    "serverless-http": "^3.2.0"
   }
 }

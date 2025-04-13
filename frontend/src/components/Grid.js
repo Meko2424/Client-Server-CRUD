@@ -3,6 +3,7 @@ import axios from "axios";
 import styled from "styled-components";
 import { FaTrash, FaEdit } from "react-icons/fa";
 import { toast } from "react-toastify";
+import { API_URL } from "../utils";
 
 const Table = styled.table`
   width: 100%;
@@ -49,7 +50,7 @@ const Grid = ({ users, setUsers, setOnEdit }) => {
   const handleDelete = async (id) => {
     await axios
       // .delete("http://localhost:8800/" + id)
-      .delete("https://wrcwrfui3h.us-east-2.awsapprunner.com/" + id)
+      .delete(`${API_URL}/{id}`)
       .then(({ data }) => {
         const newArray = users.filter((user) => user.id !== id);
 

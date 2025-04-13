@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { API_URL } from "../utils";
 
 const FormContainer = styled.form`
   display: flex;
@@ -68,7 +69,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
       await axios
         .put(
           // "http://localhost:8800/" + onEdit.id,
-          "https://wrcwrfui3h.us-east-2.awsapprunner.com/" + onEdit.id,
+          `${API_URL}/{onEdit.id}`,
 
           {
             name: user.name.value,
@@ -82,7 +83,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
     } else {
       await axios
         // .post("http://localhost:8800", {
-        .post("https://wrcwrfui3h.us-east-2.awsapprunner.com", {
+        .post(API_URL, {
           name: user.name.value,
           email: user.email.value,
           phone: user.phone.value,

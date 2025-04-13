@@ -1,18 +1,27 @@
 import express from "express";
 import cors from "cors";
 import userRoutes from "./routes/users.js";
+import serverles from "serverless-http";
 
+const port = 8800;
 const app = express();
 app.use(express.json());
-app.use(cors());
-app.use((req, res, next) => {
-  console.log(`[${req.method}] ${req.url}`);
-  next();
-});
-app.get("/test", (req, res) => {
-  res.send("Backend is up!");
-});
+if (process.env.DEVELOPMENT) {
+  app.use(cors());
+}
+
+// app.use((req, res, next) => {
+//   console.log(`[${req.method}] ${req.url}`);
+//   next();
+// });
+
 app.use("/", userRoutes);
-// app.use("/api/users", userRoutes);
-app.listen(8800);
-app.listen(PORT, () => {});
+//app.listen(8800);
+
+if (process.env.DEVELOPMENT) {
+  app.listen(port, () => {
+    console.log("Server running on port 8800");
+  });
+}
+
+export const handler = serverles(app);
