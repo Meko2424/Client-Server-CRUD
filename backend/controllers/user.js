@@ -58,7 +58,7 @@ export const deleteUser = (req, res) => {
 //import { ddb } from "../db.js";
 import {
   PutCommand,
-  GetCommand,
+  //GetCommand,
   ScanCommand,
   UpdateCommand,
   DeleteCommand,
