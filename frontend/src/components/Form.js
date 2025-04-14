@@ -69,7 +69,8 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
       await axios
         .put(
           // "http://localhost:8800/" + onEdit.id,
-          `${API_URL}/{onEdit.id}`,
+          // `${API_URL}/{onEdit.id}`,
+          API_URL + onEdit.id,
 
           {
             name: user.name.value,
